@@ -1,0 +1,102 @@
+/* Styles the entire page */
+body {
+    margin: 0; /* Removes default spacing around the body */
+    padding: 16px; /* Adds padding inside the body */
+    height: 100vh; /* Makes the body take up the full height of the screen */
+    background: #ffc0cb; /* Sets the background color (light pink) */
+    display: flex; /* Enables flexible box layout */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+
+/* Styles the main Valentine’s card container */
+.valentines_card {
+    position: relative; /* Allows better control of child elements */
+    cursor: pointer; /* Changes the mouse cursor to a pointer on hover */
+    transform-style: preserve-3d; /* Maintains 3D effect */
+    transform: perspective(2500px); /* Creates a 3D perspective */
+    transition: 4s; /* Animates the flipping effect over 4 seconds */
+}
+
+/* Styles the front image of the card */
+.front_img {
+    width: 450px; /* Sets the image width */
+    margin-right: -50px; /* Moves image slightly left */
+    margin-left: -50px; /* Moves image slightly right */
+    margin-top: 100px; /* Moves image downward */
+    position: relative; /* Keeps the image in position */
+}
+
+/* Styles the inside image of the card */
+.inside_img {
+    width: 350px; /* Sets the image width */
+    margin-right: -50px; /* Moves image slightly left */
+    margin-left: -50px; /* Moves image slightly right */
+    margin-top: 100px; /* Moves image downward */
+    position: relative; /* Keeps the image in position */
+}
+
+/* Flips the front of the card when hovered */
+.valentines_card:hover .front_card {
+    transform: rotateY(-160deg); /* Rotates the front card to reveal the inside */
+}
+
+/* Hides the text on the front when the card is flipped */
+.valentines_card:hover .front_text {
+    display: none;
+}
+
+/* Styles text on both the front and inside of the card */
+.front_text, .inside_text {
+    color:#F33A6A; /* Sets text color */
+    font-family: 'Brush Script MT', cursive; /* Sets a fancy font */
+    font-size: 24px; /* Sets the font size */
+}
+
+/* Styles the front of the card */
+.front_card {
+    position: relative; /* Positions it relative to parent container */
+    overflow: hidden; /* Prevents content from overflowing */
+    transform-origin: left; /* Rotates from the left side */
+    margin: 40px auto; /* Centers it horizontally */
+    padding: 16px; /* Adds padding inside */
+    background-color: whitesmoke; /* Sets background color */
+    text-align: center; /* Centers text */
+    box-shadow: 0 24px 40px -8px white; /* Adds a pink shadow */
+    width: 450px; /* Sets width */
+    height: 800px; /* Sets height */
+}
+
+/* Styles the inside of the card */
+.inside_card {
+    position: absolute; /* Keeps it in place while allowing overlap */
+    overflow: hidden; /* Prevents content from overflowing */
+    transform-origin: left; /* Rotates from the left side */
+    margin: 40px auto; /* Centers it horizontally */
+    padding: 16px; /* Adds padding inside */
+    background-color: whitesmoke; /* Sets background color */
+    text-align: center; /* Centers text */
+    box-shadow: 0 24px 40px -8px white; /* Adds a pink shadow */
+    width: 450px; /* Sets width */
+    height: 800px; /* Sets height */
+    z-index: -1; /* Moves it behind the front card */
+    left: 0; /* Aligns it to the left */
+    top: 0; /* Aligns it to the top */
+}
+
+/* Hides the audio player by default */
+.valentines_card audio {
+    display: none;
+}
+
+/* Hides the front image when the card is flipped */
+.valentines_card:hover .front_img {
+    display: none;
+}
+
+/* Displays the audio player when the card is flipped */
+.inside_card audio {
+    display: flex;
+    margin-left: 50px; /* Moves the audio player slightly */
+    margin-right: 40px; /* Moves the audio player slightly */
+}
